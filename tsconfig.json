@@ -13,7 +13,5 @@
 		"paths": {
 			"@/*": ["./src/*"]
 		},
-		"esModuleInterop": true,
-		"resolveJsonModule": true,
 	}
 }

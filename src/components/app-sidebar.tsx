@@ -20,19 +20,19 @@ import { SearchForm } from "@/components/search-form";
 const items = [
 	{
 		title: "Home",
-		url: "#",
+		url: "/",
 		icon: Home,
 	},
 	{
 		title: "Users",
-		url: "#",
+		url: "/",
 		icon: User,
 	},
 ];
 
 const AppSidebar = () => {
 	return (
-		<Sidebar className="bg-secondary rounded-r-3xl">
+		<Sidebar className="dark:bg-secondary bg-secondary rounded-r-3xl" variant="sidebar">
 			<SidebarHeader className="py-0 border-b-2">
 				<Logo />
 			</SidebarHeader>

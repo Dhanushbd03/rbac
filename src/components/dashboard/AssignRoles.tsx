@@ -11,7 +11,7 @@ const AssignRoles = () => {
 	return (
 		<div>
 			<Select>
-				<SelectTrigger className="w-60">
+				<SelectTrigger className="lg:w-60 max-w-28">
 					<SelectValue
 						className="text-white"
 						placeholder={`Assign Roles`}

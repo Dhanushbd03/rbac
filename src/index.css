@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
 	:root {
 		--background: 206 100% 95%;
@@ -65,3 +66,32 @@
 		width: 0;
 	}
 }
+
+
+body {
+	--sb-track-color: #0f172a;
+	--sb-thumb-color: #2278ba;
+	--sb-size: 10px;
+  }
+  
+  body::-webkit-scrollbar {
+	width: var(--sb-size)
+  }
+  
+  body::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 1px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 1px;
+	
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+	body {
+	  scrollbar-color: var(--sb-thumb-color)
+					   var(--sb-track-color);
+	}
+  }

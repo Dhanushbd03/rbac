@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { Edit } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
+import EditDialog from "./EditDialog";
 
 // Define User Type
 export type Users = {
 	id: number;
 	name: string;
+	email: string;
 	roles: string;
 	lastLogin: string;
 	status: boolean;
@@ -70,7 +71,11 @@ export const columns: ColumnDef<Users>[] = [
 		header: () => <div className="mx-auto w-fit">Last Login</div>,
 		cell: ({ row }) => {
 			const users = row.original;
-			const lastLogin = `${new Date(users.lastLogin).toLocaleDateString()} ${new Date(users.lastLogin).toLocaleTimeString()}`;
+			const lastLogin = `${new Date(
+				users.lastLogin
+			).toLocaleDateString()} ${new Date(
+				users.lastLogin
+			).toLocaleTimeString()}`;
 			return <div className="flex justify-center">{lastLogin}</div>;
 		},
 	},
@@ -98,14 +103,11 @@ export const columns: ColumnDef<Users>[] = [
 		header: () => <div className="mx-auto w-fit">Actions</div>,
 		cell: ({ row }) => {
 			const users = row.original;
-
-			return (
-				<div className="flex justify-center">
-					<Button variant="custom">
-						<Edit size={16} />
-					</Button>
-				</div>
-			);
+			const user = {
+				name: users.name,
+				email: users.email,
+			}
+			return <EditDialog user={user} />;
 		},
 	},
 ];

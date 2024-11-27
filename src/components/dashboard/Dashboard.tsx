@@ -13,6 +13,7 @@ interface User {
 	roles: string; // Updated to hold multiple roles
 	lastLogin: string;
 	status: boolean;
+	email: string;
 }
 
 // Function to transform usersData
@@ -21,6 +22,7 @@ const rolesMap = new Map(data.roles.map((role) => [role.id, role.name]));
 const users: User[] = usersData.map((user) => ({
 	id: user.id,
 	name: user.name,
+	email: user.email,
 	roles: user.roles
 		.map((roleId) => rolesMap.get(roleId) || "Unknown")
 		.join(", "), // Map each role ID to its name
@@ -42,13 +44,13 @@ const Dashboard = (): JSX.Element => {
 				<div className="flex items-center justify-between">
 					<Title title={`User Access`} />
 					<ShowFrom
-						key={refreshKey} // Changing key forces re-mount of ShowFrom component
+						key={refreshKey} 
 						from={1}
 						to={20}
-						reload={refreshDashboard} // Pass the refresh function as a prop
+						reload={refreshDashboard} 
 					/>
 				</div>
-				<div className="flex">
+				<div className="flex px-5 gap-2">
 					<Search />
 					<AssignRoles />
 				</div>

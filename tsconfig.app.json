@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"jsx": "react",
-		// ...
+		"outDir": "./dist",
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
