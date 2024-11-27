@@ -7,6 +7,8 @@
 			"@/*": ["./src/*"]
 		},
 		"esModuleInterop": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"moduleResolution": "node16",
+		"module": "Node16"
 	}
 }
