@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 206 100% 95%;
+		--foreground: 206 5% 10%;
+		--card: 206 50% 90%;
+		--card-foreground: 206 5% 15%;
+		--popover: 206 100% 95%;
+		--popover-foreground: 206 100% 10%;
+		--primary: 206 69.1% 43.1%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 206 30% 70%;
+		--secondary-foreground: 0 0% 0%;
+		--muted: 168 30% 85%;
+		--muted-foreground: 206 5% 35%;
+		--accent: 168 30% 80%;
+		--accent-foreground: 206 5% 15%;
+		--destructive: 0 100% 30%;
+		--destructive-foreground: 206 5% 90%;
+		--border: 206 30% 50%;
+		--input: 206 30% 26%;
+		--ring: 206 69.1% 43.1%;
+		--radius: 0.75rem;
+	}
+	.dark {
+		--background: 206 50% 10%;
+		--foreground: 206 5% 90%;
+		--card: 206 50% 10%;
+		--card-foreground: 206 5% 90%;
+		--popover: 206 50% 5%;
+		--popover-foreground: 206 5% 90%;
+		--primary: 206 69.1% 43.1%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 206 30% 20%;
+		--secondary-foreground: 0 0% 100%;
+		--muted: 168 30% 25%;
+		--muted-foreground: 206 5% 60%;
+		--accent: 168 30% 25%;
+		--accent-foreground: 206 5% 90%;
+		--destructive: 0 100% 30%;
+		--destructive-foreground: 206 5% 90%;
+		--border: 206 30% 26%;
+		--input: 206 30% 26%;
+		--ring: 206 69.1% 43.1%;
+		--radius: 0.75rem;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+@layer scrollbar {
+	.scrollbar::-webkit-scrollbar {
+		width: 0;
+	}
+}
